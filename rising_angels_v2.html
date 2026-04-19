@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rising Angels Islamic English School – Amravati</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --green:#1a6b3c;
+  --green-mid:#238a4e;
+  --green-light:#e8f5ee;
+  --green-pale:#f0faf4;
+  --teal:#0d7377;
+  --gold:#d4a017;
+  --gold-light:#f0c84a;
+  --white:#ffffff;
+  --off:#f8fdf9;
+  --text:#1c2b1e;
+  --text-mid:#3d5a44;
+  --text-muted:#6b8a72;
+  --radius:14px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,107,60,0.12);padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:72px;box-shadow:0 2px 20px rgba(26,107,60,0.08);}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-icon{width:46px;height:46px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;}
+.nav-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--green);line-height:1.1;}
+.nav-sub{font-size:10px;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
+.nav-links a{color:var(--text-mid);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.5px;transition:color .2s;}
+.nav-links a:hover{color:var(--green);}
+.nav-enroll{background:var(--green);color:#fff !important;padding:10px 22px;border-radius:30px;font-size:13px;font-weight:700;}
+.nav-enroll:hover{background:var(--green-mid) !important;}
+
+/* HERO */
+.hero{min-height:100vh;padding-top:72px;display:grid;grid-template-columns:1fr 1fr;align-items:center;background:var(--off);position:relative;overflow:hidden;}
+.hero-shapes{position:absolute;inset:0;pointer-events:none;}
+.hero-circle1{position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(26,107,60,0.04);top:-100px;right:-80px;}
+.hero-circle2{position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(212,160,23,0.07);bottom:80px;left:-60px;}
+.hero-dots{position:absolute;top:120px;left:80px;opacity:.15;}
+.hero-left{padding:4rem 3rem 4rem 5rem;position:relative;z-index:2;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-light);color:var(--green);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;border-radius:30px;margin-bottom:1.8rem;}
+.badge-dot{width:8px;height:8px;border-radius:50%;background:var(--green);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.4rem);color:var(--text);line-height:1.15;margin-bottom:1rem;}
+.hero h1 span{color:var(--green);}
+.hero-arabic{font-size:1.1rem;color:var(--gold);letter-spacing:4px;margin-bottom:1.2rem;opacity:.85;}
+.hero-desc{font-size:1rem;color:var(--text-mid);line-height:1.9;margin-bottom:2rem;max-width:480px;font-weight:400;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-green{background:var(--green);color:#fff;padding:14px 30px;border-radius:30px;text-decoration:none;font-weight:700;font-size:14px;transition:all .3s;}
+.btn-green:hover{background:var(--green-mid);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,107,60,0.3);}
+.btn-ghost{border:2px solid var(--green);color:var(--green);padding:12px 28px;border-radius:30px;text-decoration:none;font-weight:700;font-size:14px;transition:all .3s;}
+.btn-ghost:hover{background:var(--green-light);}
+.hero-right{position:relative;height:100%;min-height:600px;display:flex;align-items:center;justify-content:center;padding:2rem 3rem 2rem 1rem;}
+.hero-img-main{width:340px;height:420px;object-fit:cover;border-radius:20px 20px 80px 20px;box-shadow:0 20px 60px rgba(26,107,60,0.2);position:relative;z-index:2;}
+.hero-img-float{width:180px;height:180px;object-fit:cover;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,0.15);position:absolute;bottom:80px;left:20px;z-index:3;border:4px solid #fff;}
+.hero-card-stat{position:absolute;top:100px;right:20px;background:#fff;border-radius:16px;padding:16px 20px;box-shadow:0 8px 30px rgba(26,107,60,0.15);z-index:3;text-align:center;}
+.hero-card-stat .num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--green);line-height:1;}
+.hero-card-stat .lbl{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px;}
+.hero-green-pill{position:absolute;bottom:120px;right:30px;background:var(--green);color:#fff;border-radius:14px;padding:12px 18px;font-size:13px;font-weight:700;z-index:3;box-shadow:0 6px 20px rgba(26,107,60,0.35);}
+.hero-green-pill span{display:block;font-size:10px;font-weight:400;opacity:.8;letter-spacing:1px;margin-top:2px;}
+
+/* STATS BAR */
+.stats-bar{background:var(--green);padding:2rem 3rem;display:flex;justify-content:center;gap:5rem;}
+.stat{text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;color:#fff;display:block;font-weight:700;}
+.stat-lbl{font-size:12px;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:2px;}
+
+/* SECTIONS */
+section{padding:90px 3rem;}
+.container{max-width:1100px;margin:0 auto;}
+.sec-tag{display:inline-block;background:var(--green-light);color:var(--green);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;border-radius:30px;margin-bottom:.8rem;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.5rem);color:var(--text);margin-bottom:.8rem;line-height:1.2;}
+.sec-title.white{color:#fff;}
+.sec-line{width:50px;height:3px;background:var(--green);border-radius:2px;margin-bottom:2rem;}
+.sec-line.gold{background:var(--gold);}
+.sec-sub{font-size:1rem;color:var(--text-mid);line-height:1.85;max-width:580px;font-weight:400;}
+
+/* ABOUT */
+.about{background:var(--white);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.about-imgs{position:relative;height:460px;}
+.about-img1{width:280px;height:340px;object-fit:cover;border-radius:16px 16px 60px 16px;position:absolute;top:0;left:0;box-shadow:0 16px 48px rgba(26,107,60,0.18);}
+.about-img2{width:200px;height:240px;object-fit:cover;border-radius:12px;position:absolute;bottom:0;right:0;z-index:2;box-shadow:0 12px 36px rgba(0,0,0,.14);border:5px solid #fff;}
+.about-quote-card{position:absolute;top:180px;right:-10px;background:var(--green);color:#fff;border-radius:14px;padding:16px 18px;max-width:190px;z-index:3;box-shadow:0 8px 28px rgba(26,107,60,.4);}
+.about-quote-card p{font-size:12px;line-height:1.7;font-style:italic;}
+.about-quote-card .attr{font-size:10px;opacity:.7;margin-top:6px;text-transform:uppercase;letter-spacing:1px;}
+.val-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;}
+.val-card{background:var(--green-pale);border-radius:var(--radius);padding:1.2rem;display:flex;gap:12px;align-items:flex-start;}
+.val-icon{width:40px;height:40px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.val-card h4{font-size:14px;font-weight:700;color:var(--green);margin-bottom:3px;}
+.val-card p{font-size:12px;color:var(--text-mid);line-height:1.6;}
+
+/* PROGRAMS */
+.programs{background:var(--green-pale);}
+.programs-hd{text-align:center;margin-bottom:3.5rem;}
+.programs-hd .sec-line{margin:0 auto 2rem;}
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.prog-card{background:#fff;border-radius:var(--radius);padding:2rem 1.5rem;text-align:center;transition:all .3s;border:1.5px solid transparent;position:relative;overflow:hidden;}
+.prog-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--green);transform:scaleX(0);transition:transform .3s;border-radius:0 0 4px 4px;}
+.prog-card:hover{border-color:rgba(26,107,60,.15);box-shadow:0 12px 40px rgba(26,107,60,.12);transform:translateY(-6px);}
+.prog-card:hover::after{transform:scaleX(1);}
+.prog-img{width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:1.2rem;}
+.prog-level{font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:700;margin-bottom:.3rem;}
+.prog-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--text);margin-bottom:.5rem;}
+.prog-desc{font-size:13px;color:var(--text-mid);line-height:1.65;}
+
+/* WHY US */
+.whyus{background:var(--green);}
+.whyus-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:center;}
+.whyus-img-wrap{position:relative;}
+.whyus-img{width:100%;height:480px;object-fit:cover;border-radius:20px 80px 20px 20px;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+.whyus-badge{position:absolute;bottom:30px;left:-20px;background:#fff;border-radius:14px;padding:16px 20px;box-shadow:0 8px 30px rgba(0,0,0,.18);}
+.whyus-badge .num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--green);}
+.whyus-badge .lbl{font-size:11px;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;}
+.feat-list{margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.feat-item{display:flex;gap:1rem;align-items:flex-start;background:rgba(255,255,255,0.08);border-radius:12px;padding:1.2rem;}
+.feat-num-badge{width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,.3);color:#fff;font-family:'Playfair Display',serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.feat-item h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px;}
+.feat-item p{font-size:13px;color:rgba(255,255,255,.7);line-height:1.6;}
+
+/* GALLERY */
+.gallery{background:var(--white);}
+.gallery-hd{text-align:center;margin-bottom:3rem;}
+.gallery-hd .sec-line{margin:0 auto 2rem;}
+.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px;gap:1rem;}
+.gallery-img{width:100%;height:100%;object-fit:cover;border-radius:12px;transition:transform .3s;}
+.gallery-img:hover{transform:scale(1.02);}
+.gallery-img:first-child{grid-row:1/3;border-radius:16px;}
+
+/* ADMISSION */
+.admission{background:var(--green-pale);}
+.admission-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:start;}
+.steps{margin-top:1.5rem;}
+.step{display:flex;gap:1.2rem;margin-bottom:1.8rem;align-items:flex-start;}
+.step-num{width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px rgba(26,107,60,.3);}
+.step-body h4{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.step-body p{font-size:13px;color:var(--text-mid);line-height:1.65;}
+.contact-card{background:var(--green);border-radius:var(--radius);padding:2.5rem;color:#fff;}
+.contact-card h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:1.5rem;color:#fff;}
+.citem{display:flex;gap:1rem;margin-bottom:1.2rem;align-items:flex-start;}
+.cico{width:36px;height:36px;background:rgba(255,255,255,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.citem-text p{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.citem-text span{font-size:14px;color:#fff;}
+.cdiv{border:none;border-top:1px solid rgba(255,255,255,.15);margin:1.2rem 0;}
+.chours{font-size:13px;color:rgba(255,255,255,.7);line-height:1.7;}
+.chours strong{display:block;font-size:11px;color:var(--gold-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:.4rem;}
+
+/* FOOTER */
+footer{background:#0d3d1f;padding:3.5rem 3rem 2rem;}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
+.fbrand p.name{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);margin-bottom:.8rem;}
+.fbrand p.desc{font-size:13px;color:rgba(255,255,255,.4);line-height:1.8;}
+.fcol h4{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-light);margin-bottom:1rem;}
+.fcol ul{list-style:none;}
+.fcol ul li{margin-bottom:.5rem;}
+.fcol ul li a{color:rgba(255,255,255,.4);text-decoration:none;font-size:13px;transition:color .2s;}
+.fcol ul li a:hover{color:var(--gold-light);}
+.footer-bottom{max-width:1100px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.25);}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(28px);transition:all .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .hero-right{display:none;}
+  .about-grid,.whyus-grid,.admission-grid{grid-template-columns:1fr;}
+  .prog-grid{grid-template-columns:1fr 1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .gallery-img:first-child{grid-row:auto;}
+  .footer-inner{grid-template-columns:1fr;}
+  nav{padding:0 1.5rem;}
+  .nav-links{display:none;}
+  section{padding:60px 1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">
+    <div class="nav-icon">☪</div>
+    <div>
+      <div class="nav-name">Rising Angels</div>
+      <div class="nav-sub">Islamic English School</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#whyus">Why Us</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact" class="nav-enroll">Enroll Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-shapes">
+    <div class="hero-circle1"></div>
+    <div class="hero-circle2"></div>
+  </div>
+  <div class="hero-left">
+    <div class="hero-badge"><div class="badge-dot"></div>Amravati, Maharashtra – Est. School</div>
+    <h1>Shaping Bright<br/><span>Muslim Minds</span><br/>With Purpose</h1>
+    <p class="hero-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+    <p class="hero-desc">From Play Group to Junior College — a complete English-medium education rooted in Islamic values, nurturing every child's mind, character, and faith.</p>
+    <div class="hero-btns">
+      <a href="#programs" class="btn-green">Explore Programs</a>
+      <a href="#contact" class="btn-ghost">Contact Us</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-img-main"
+      src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80"
+      alt="Students in classroom" loading="eager"/>
+    <img class="hero-img-float"
+      src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=400&q=80"
+      alt="Happy student" loading="eager"/>
+    <div class="hero-card-stat">
+      <div class="num">14+</div>
+      <div class="lbl">Grades Offered</div>
+    </div>
+    <div class="hero-green-pill">
+      🎓 Play Group to Jr. College
+      <span>Complete Education</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat"><span class="stat-num">14+</span><span class="stat-lbl">Grades</span></div>
+  <div class="stat"><span class="stat-num">3</span><span class="stat-lbl">Jr. College Streams</span></div>
+  <div class="stat"><span class="stat-num">8 AM</span><span class="stat-lbl">Opens Daily</span></div>
+  <div class="stat"><span class="stat-num">100%</span><span class="stat-lbl">Dedicated Staff</span></div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-imgs reveal">
+        <img class="about-img1"
+          src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80"
+          alt="Students in school"/>
+        <img class="about-img2"
+          src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=400&q=80"
+          alt="Child reading"/>
+        <div class="about-quote-card">
+          <p>"Seeking knowledge is an obligation upon every Muslim."</p>
+          <p class="attr">— Prophet Muhammad ﷺ</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="sec-tag">Our Story</span>
+        <h2 class="sec-title">Where Faith &amp; Knowledge Come Together</h2>
+        <div class="sec-line"></div>
+        <p class="sec-sub">Rising Angels Islamic English School is a premier English-medium institution in the heart of Amravati. We blend rigorous academic standards with deeply rooted Islamic education — shaping students who are confident, compassionate, and ready for the world.</p>
+        <div class="val-cards">
+          <div class="val-card">
+            <div class="val-icon">📖</div>
+            <div>
+              <h4>Quran &amp; Deen</h4>
+              <p>Islamic studies woven into every school day.</p>
+            </div>
+          </div>
+          <div class="val-card">
+            <div class="val-icon">🎓</div>
+            <div>
+              <h4>Academic Excellence</h4>
+              <p>Strong English-medium curriculum from day one.</p>
+            </div>
+          </div>
+          <div class="val-card">
+            <div class="val-icon">🌟</div>
+            <div>
+              <h4>Character Building</h4>
+              <p>Integrity, empathy, and leadership at the core.</p>
+            </div>
+          </div>
+          <div class="val-card">
+            <div class="val-icon">👨‍👩‍👧</div>
+            <div>
+              <h4>Family Values</h4>
+              <p>A welcoming community where every child thrives.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+  <div class="container">
+    <div class="programs-hd reveal">
+      <span class="sec-tag">Academic Programs</span>
+      <h2 class="sec-title">A Complete Educational Journey</h2>
+      <div class="sec-line"></div>
+      <p class="sec-sub" style="margin:0 auto;">From the very first day of school to Junior College — we guide every child through a purposeful, faith-centered education.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-card reveal">
+        <img class="prog-img"
+          src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&q=75"
+          alt="Play group children"/>
+        <p class="prog-level">Early Years</p>
+        <p class="prog-title">Play Group &amp; Nursery</p>
+        <p class="prog-desc">A joyful start through play, exploration, and early language development in a loving environment.</p>
+      </div>
+      <div class="prog-card reveal">
+        <img class="prog-img"
+          src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=500&q=75"
+          alt="Kindergarten children"/>
+        <p class="prog-level">Kindergarten</p>
+        <p class="prog-title">LKG &amp; UKG</p>
+        <p class="prog-desc">Building reading, numeracy, and confidence through structured yet creative learning experiences.</p>
+      </div>
+      <div class="prog-card reveal">
+        <img class="prog-img"
+          src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&q=75"
+          alt="Primary school students"/>
+        <p class="prog-level">Primary &amp; Secondary</p>
+        <p class="prog-title">Std 1st – 10th</p>
+        <p class="prog-desc">Comprehensive English-medium schooling with strong foundations in science, maths, languages and Islamic studies.</p>
+      </div>
+      <div class="prog-card reveal">
+        <img class="prog-img"
+          src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&q=75"
+          alt="Higher secondary science"/>
+        <p class="prog-level">Higher Secondary</p>
+        <p class="prog-title">Jr. College – Science</p>
+        <p class="prog-desc">Physics, Chemistry, Biology and Mathematics — a strong launch pad for medical and engineering aspirants.</p>
+      </div>
+      <div class="prog-card reveal">
+        <img class="prog-img"
+          src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=500&q=75"
+          alt="Arts students"/>
+        <p class="prog-level">Higher Secondary</p>
+        <p class="prog-title">Jr. College – Arts</p>
+        <p class="prog-desc">A rich arts stream cultivating critical thinking, communication, and social understanding.</p>
+      </div>
+      <div class="prog-card reveal">
+        <img class="prog-img"
+          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&q=75"
+          alt="Computer science students"/>
+        <p class="prog-level">Higher Secondary</p>
+        <p class="prog-title">Jr. College – Computer Science</p>
+        <p class="prog-desc">Coding, technology and digital skills for the next generation of innovators and IT professionals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="whyus" id="whyus">
+  <div class="container">
+    <div class="whyus-grid">
+      <div class="whyus-img-wrap reveal">
+        <img class="whyus-img"
+          src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=700&q=80"
+          alt="Happy students learning"/>
+        <div class="whyus-badge">
+          <div class="num">100%</div>
+          <div class="lbl">Dedicated to Students</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="sec-tag" style="background:rgba(255,255,255,.15);color:#fff;">Why Choose Us</span>
+        <h2 class="sec-title white">A School Built on<br/>Trust &amp; Excellence</h2>
+        <div class="sec-line gold"></div>
+        <p class="sec-sub" style="color:rgba(255,255,255,.75);">Rising Angels offers more than education — we offer a community where every child is seen, valued, and empowered to reach their fullest potential.</p>
+        <div class="feat-list">
+          <div class="feat-item">
+            <div class="feat-num-badge">01</div>
+            <div><h4>Prime Location in Amravati</h4><p>Walgaon Road, Paradise Colony — easily accessible with ample parking for families.</p></div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-num-badge">02</div>
+            <div><h4>Expert, Caring Staff</h4><p>Dedicated teachers who know every student by name and nurture their unique potential.</p></div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-num-badge">03</div>
+            <div><h4>Integrated Islamic Education</h4><p>Faith is not a subject — it's the foundation woven into every part of school life.</p></div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-num-badge">04</div>
+            <div><h4>One School, Complete Journey</h4><p>Playgroup to Junior College — families stay in one trusted community for the full journey.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="gallery-hd reveal">
+      <span class="sec-tag">School Life</span>
+      <h2 class="sec-title">Life at Rising Angels</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="gallery-grid reveal">
+      <img class="gallery-img"
+        src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=700&q=80"
+        alt="Students at library" style="grid-row:1/3;"/>
+      <img class="gallery-img"
+        src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&q=75"
+        alt="Students studying"/>
+      <img class="gallery-img"
+        src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=500&q=75"
+        alt="Children learning"/>
+      <img class="gallery-img"
+        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&q=75"
+        alt="Student on computer"/>
+      <img class="gallery-img"
+        src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=500&q=75"
+        alt="Happy children at school"/>
+      <img class="gallery-img"
+        src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1000&q=80"
+        alt="Children playing" style="grid-column: 1 / -1;"/>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSION + CONTACT -->
+<section class="admission" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <span class="sec-tag">Admissions Open</span>
+      <h2 class="sec-title">Join Our School Family</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="admission-grid">
+      <div>
+        <p class="sec-sub">Enrolment is open for all classes from Play Group to Std 12th and Junior College. Follow these simple steps to secure your child's place at Rising Angels.</p>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h4>Get in Touch</h4>
+              <p>Email us or walk in to our school on Walgaon Road during school hours — we're open from 8 AM on all working days.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h4>School Visit &amp; Counselling</h4>
+              <p>Schedule a visit to tour the school, meet our staff, and get personalised guidance for your child's class.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h4>Submit Documents</h4>
+              <p>Bring the birth certificate, previous school marksheets, and passport-size photographs to complete your application.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h4>Welcome to Rising Angels!</h4>
+              <p>Complete fee payment (cash accepted) and receive your admission confirmation. Your child's journey begins here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-card reveal">
+        <h3>Contact Us</h3>
+        <div class="citem">
+          <div class="cico">📍</div>
+          <div class="citem-text">
+            <p>Address</p>
+            <span>Walgaon Road, Near Al-Hakeem Library, Paradise Colony, Amravati – 444601, Maharashtra</span>
+          </div>
+        </div>
+        <div class="citem">
+          <div class="cico">✉️</div>
+          <div class="citem-text">
+            <p>Email</p>
+            <span>khan.atifuzair@gmail.com</span>
+          </div>
+        </div>
+        <div class="citem">
+          <div class="cico">📱</div>
+          <div class="citem-text">
+            <p>Instagram</p>
+            <span>@risinganglesschool27</span>
+          </div>
+        </div>
+        <hr class="cdiv"/>
+        <div class="chours">
+          <strong>School Hours</strong>
+          Opens 8 AM on all working days.<br/>Please confirm holiday schedules directly with the school.
+        </div>
+        <hr class="cdiv"/>
+        <div class="chours">
+          <strong>Payment</strong>
+          Cash accepted. Please confirm other modes directly.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="fbrand">
+      <p class="name">Rising Angels Islamic English School</p>
+      <p class="desc">Nurturing faith, knowledge and character in Amravati. A complete school from Play Group to Junior College — building the leaders of tomorrow.</p>
+    </div>
+    <div class="fcol">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="#">Play Group &amp; Nursery</a></li>
+        <li><a href="#">LKG &amp; UKG</a></li>
+        <li><a href="#">Std 1st – 12th</a></li>
+        <li><a href="#">Jr. College – Science</a></li>
+        <li><a href="#">Jr. College – Arts</a></li>
+        <li><a href="#">Jr. College – Computers</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#whyus">Why Choose Us</a></li>
+        <li><a href="#gallery">School Life</a></li>
+        <li><a href="#contact">Admissions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Rising Angels Islamic English School, Amravati</span>
+    <span>Walgaon Road, Paradise Colony – 444601, Maharashtra</span>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'), i*90);
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
